@@ -40,16 +40,17 @@ def format_func(str_xiaoi):
 		str_xiaoi=re.sub(r"u[0-9abcdef]{4}","",str_xiaoi)
 	return str_xiaoi
 
-#http://i.xiaoi.com/robot/webrobot?&callback=__webrobot_processMsg&data=%7B%22sessionId%22%3A%22f5b61eba68144a429b543a0d9a98eb90%22%2C%22robotId%22%3A%22webbot%22%2C%22userId%22%3A%22873a71883fd74449b3c99874cf7ad886%22%2C%22body%22%3A%7B%22content%22%3A%22%E4%BD%A0%E5%A5%BD%22%7D%2C%22type%22%3A%22txt%22%7D&ts=1534051772519
+# http://i.xiaoi.com/robot/webrobot?&callback=__webrobot_processMsg&data=%7B%22sessionId%22%3A%2296e80737a4ec461aacfa3de49ae673ea%22%2C%22robotId%22%3A%22webbot%22%2C%22userId%22%3A%22b345ff113b6f45229e1cb2f231561866%22%2C%22body%22%3A%7B%22content%22%3A%22%E4%BD%A0%E5%A5%BD%22%7D%2C%22type%22%3A%22txt%22%7D&ts=1552199072937
+# 原来的URL已经过期，新的URL提供测试
 
 while True:
 	try :
-		inputStr = input("输入一个字符串：")
+		inputStr = input("我：")
 		word=urllib.parse.quote(inputStr)
 		# 更新网址：
-		url_api="http://i.xiaoi.com/robot/webrobot?&callback=__webrobot_processMsg&data=%7B%22sessionId%22%3A%22f5b61eba68144a429b543a0d9a98eb90%22%2C%22robotId%22%3A%22webbot%22%2C%22userId%22%3A%22873a71883fd74449b3c99874cf7ad886%22%2C%22body%22%3A%7B%22content%22%3A%22%E4%BD%A0%E5%A5%BD%22%7D%2C%22type%22%3A%22txt%22%7D&ts=1534051772519"
-		#%E4%BD%A0%E5%A5%BD
-		url_new=re.sub("%E4%BD%A0%E5%A5%BD",word,url_api)
+		url_api="http://i.xiaoi.com/robot/webrobot?&callback=__webrobot_processMsg&data=%7B%22sessionId%22%3A%2296e80737a4ec461aacfa3de49ae673ea%22%2C%22robotId%22%3A%22webbot%22%2C%22userId%22%3A%22b345ff113b6f45229e1cb2f231561866%22%2C%22body%22%3A%7B%22content%22%3A%22%E4%BD%A0%E5%A5%BD%22%7D%2C%22type%22%3A%22txt%22%7D&ts=1552199072937"
+		# E4%BD%A0%E5%A5%BD
+		url_new=re.sub("E4%BD%A0%E5%A5%BD",word,url_api)
 		timeout=7
 		socket.setdefaulttimeout(timeout)
 		req = urllib.request.Request(url_new)
@@ -60,4 +61,3 @@ while True:
 		check_back_str(main_out_str)
 	except:
 		print("##########超时错误##########")
-# 1174,20
