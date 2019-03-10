@@ -1,3 +1,5 @@
+# 图灵已经限制次数了
+# 使用我刚更新的机器人
 from time import sleep
 from socket import setdefaulttimeout
 from re import sub
@@ -56,5 +58,3 @@ while 1:
 			say(backdio)
 		except:
 			print("请求出错！！")
-	# sleep(2)
-	#{'corpus_no': '6622501604886307834', 'err_msg': 'success.', 'err_no': 0, 'result': ['啦啦，'], 'sn': '160345041771541921311'}
